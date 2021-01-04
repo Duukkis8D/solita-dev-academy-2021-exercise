@@ -1,17 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 
 const App = (props) => {
-  const [ counter, setCounter ] = useState(0)
+  const [ names, setNames ] = useState([])
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:3001/names')
+      .then(response => {
+        console.log(response.data)
+        setNames(response.data)
+      })
+  }, [])
 
   return (
     <div>
-      <div>{counter}</div>
-      <button onClick={() => setCounter(counter + 1)}>
-        plus
-      </button>
-      <button onClick={() => setCounter(0)}> 
-        zero
-      </button>
+      <h1>Names app</h1>
     </div>
   )
 }
