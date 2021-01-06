@@ -1,6 +1,6 @@
 import React from 'react'
 
-const List = ( { names } ) => {
+const NamesList = ( { names } ) => {
     const sortByAmount = () => {
         names.sort(( a, b ) => b.amount - a.amount )
         return names
@@ -15,4 +15,4 @@ const List = ( { names } ) => {
     )
 }
 
-export default List
+export default NamesList

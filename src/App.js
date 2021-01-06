@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import List from './components/List'
+import NamesList from './components/NamesList'
+import nameService from './services/nameService'
 
 const App = ( props ) => {
   const [ names, setNames ] = useState([])
 
   useEffect(() => {
-    axios
-      .get( 'http://localhost:3001/names' )
+    nameService
+      .getNames()
       .then( response => {
         setNames( response.data )
       })
@@ -16,7 +16,7 @@ const App = ( props ) => {
   return (
     <div>
       <h1>Names app</h1>
-      <List names={ names }></List>
+      <NamesList names={ names }></NamesList>
     </div>
   )
 }
