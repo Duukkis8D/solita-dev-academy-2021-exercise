@@ -2,7 +2,7 @@ import React from 'react'
 
 const List = ( { names } ) => {
     const sortByAmount = () => {
-        names.sort(( a, b ) => a.amount - b.amount )
+        names.sort(( a, b ) => b.amount - a.amount )
         return names
     }
 
