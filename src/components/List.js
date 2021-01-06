@@ -2,9 +2,7 @@ import React from 'react'
 
 const List = ( { names } ) => {
     const sortByAmount = () => {
-        // names-taulukkoa pitäisi ehkä käydä läpi foreach-loopissa ja tehdä uusi järjestetty taulukko.
-        names.sort(( a, b ) => a - b )
-        console.log( names )
+        names.sort(( a, b ) => a.amount - b.amount )
         return names
     }
 
