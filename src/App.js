@@ -16,13 +16,21 @@ const App = ( props ) => {
       })
   }, [])
 
+  const handleShowByAmount = () => {
+
+  }
+
+  const handleShowInABC = () => {
+
+  }
+
   return (
     <div>
       <h1>Most common names in Solita</h1>
-      <NamesList names={ names } sortType={ sortType }></NamesList>
       <p>Sort names</p>
-      <button>show by amount</button>
-      <button>show in alphabetical order</button>
+      <button onClick={ handleShowByAmount }>show by amount</button>
+      <button onClick={ handleShowInABC }>show in alphabetical order</button>
+      <NamesList names={ names } sortType={ sortType }></NamesList>
       <p>Total amount of all the names</p>
       <button>show total amount</button>
       <p>Give a name for which you want see occurrence</p>
