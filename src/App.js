@@ -4,7 +4,7 @@ import nameService from './services/nameService'
 
 const App = ( props ) => {
   const [ names, setNames ] = useState([])
-  // sortType = 'amount' OR 'alphabetical'
+  // sortType = 'amount' OR 'alphabet'
   const [ sortType, setSortType ] = useState('')
 
   useEffect(() => {
@@ -12,6 +12,7 @@ const App = ( props ) => {
       .getNames()
       .then( response => {
         setNames( response.data )
+        setSortType( 'alphabet' ) // sort type hardcoded
       })
   }, [])
 
