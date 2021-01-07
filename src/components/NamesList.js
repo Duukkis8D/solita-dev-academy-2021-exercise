@@ -1,21 +1,18 @@
 import React from 'react'
 
 const NamesList = ({ names, sortType }) => {
-    const sortNames = () => {
+    const renderNames = () => {
         if ( sortType === 'amount' ) {
             names.sort(( a, b ) => b.amount - a.amount )
             return names.map( name =>
-                <li key={ name.name }>{ name.name }<br></br>amount: { name.amount }</li>
+                <li key={ name.name }>{ name.name }<br></br>amount: { name.amount }</li>   
             )
         }
 
         if ( sortType === 'alphabet' ) {
             names.sort(( a, b ) => {
-                const nameA = a.name
-                const nameB = b.name
-    
-                if ( nameA < nameB ) return -1
-                if ( nameA > nameB ) return 1
+                if ( a.name < b.name ) return -1
+                if ( a.name > b.name ) return 1
                 return 0
             })
             return names.map( name =>
@@ -23,11 +20,17 @@ const NamesList = ({ names, sortType }) => {
             )
         }
 
-        else return
+        if ( sortType === 'totalAmount' ) {
+            const reducer = ( accumulator, currentValue ) => accumulator + currentValue.amount
+            names.reduce( reducer )
+            return <li>{ names }</li>
+        }
+
+        else return null
     }
 
     return (
-        <ul>{ sortNames() }</ul>
+        <ul>{ renderNames() }</ul>
     )
 }
 

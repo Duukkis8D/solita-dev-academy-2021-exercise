@@ -4,7 +4,7 @@ import nameService from './services/nameService'
 
 const App = ( props ) => {
   const [ names, setNames ] = useState([])
-  // sortType = 'amount' OR 'alphabet'
+  // sortType = 'amount' OR 'alphabet' OR totalAmount
   const [ sortType, setSortType ] = useState('')
 
   useEffect(() => {
@@ -23,6 +23,10 @@ const App = ( props ) => {
     setSortType( 'alphabet' )
   }
 
+  const handleShowTotal = () => {
+    setSortType( 'totalAmount' )
+  }
+
   return (
     <div>
       <h1>Most common names in Solita</h1>
@@ -31,7 +35,7 @@ const App = ( props ) => {
       <button onClick={ handleShowInABC }>show in alphabetical order</button>
       <NamesList names={ names } sortType={ sortType }></NamesList>
       <p>Total amount of all the names</p>
-      <button>show total amount</button>
+      <button onClick={ handleShowTotal }>show total amount</button>
       <p>Give a name for which you want see occurrence</p>
       <form></form>
     </div>
