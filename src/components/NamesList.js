@@ -8,6 +8,7 @@ const NamesList = ({ names, sortType }) => {
                 <li key={ name.name }>{ name.name }<br></br>amount: { name.amount }</li>
             )
         }
+
         if ( sortType === 'alphabet' ) {
             names.sort(( a, b ) => {
                 const nameA = a.name
@@ -21,6 +22,8 @@ const NamesList = ({ names, sortType }) => {
                 <li key={ name.name }>{ name.name }<br></br>amount: { name.amount }</li>
             )
         }
+
+        else return
     }
 
     return (

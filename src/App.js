@@ -12,16 +12,15 @@ const App = ( props ) => {
       .getNames()
       .then( response => {
         setNames( response.data )
-        setSortType( 'alphabet' ) // sort type hardcoded
       })
   }, [])
 
   const handleShowByAmount = () => {
-
+    setSortType( 'amount' )
   }
 
   const handleShowInABC = () => {
-
+    setSortType( 'alphabet' )
   }
 
   return (
