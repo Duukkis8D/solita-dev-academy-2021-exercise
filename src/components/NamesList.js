@@ -20,12 +20,6 @@ const NamesList = ({ names, sortType }) => {
             )
         }
 
-        if ( sortType === 'totalAmount' ) {
-            const reducer = ( accumulator, currentValue ) => accumulator + currentValue.amount
-            names.reduce( reducer )
-            return <li>{ names }</li>
-        }
-
         else return null
     }
 
