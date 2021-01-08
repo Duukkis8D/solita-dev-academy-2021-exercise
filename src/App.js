@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import NamesList from './components/NamesList'
 import TotalAmount from './components/TotalAmount'
+import Filter from './components/Filter'
 import nameService from './services/nameService'
 
-const App = ( props ) => {
+const App = () => {
   const [ names, setNames ] = useState([])
-  // sortType = 'amount' OR 'alphabet' OR totalAmount
-  const [ sortType, setSortType ] = useState( 'amount' ) // default sort method is by amount
+  // sortType = 'amount' OR 'alphabet' (defaults to 'amount')
+  const [ sortType, setSortType ] = useState( 'amount' )
   const [ totalAmount, setTotalAmount ] = useState( false )
+  const [ searchPhrase, setSearchPhrase ] = useState( '' )
+  const [ showAll, setShowAll ] = useState( true )
 
   useEffect(() => {
     nameService
@@ -29,21 +32,27 @@ const App = ( props ) => {
     setTotalAmount( totalAmount === true ? false : true )
   }
 
+  const handleSearch = ( event ) => {
+    setSortType( 'alphabet' )
+    setShowAll( false )
+    setSearchPhrase( event.target.value )
+    console.log( event.target.value )
+    if ( event.target.value === '' ) setShowAll( true )
+  }
+
   return (
     <div>
       <h1>Most common names in Solita</h1>
-
-      <p>Sort names</p>
-      <button onClick={ handleShowByAmount }>show by amount</button>
-      <button onClick={ handleShowInABC }>show in alphabetical order</button>
-      <NamesList names={ names } sortType={ sortType }></NamesList>
-
-      <p>Total amount of all the names</p>
-      <button onClick={ handleShowTotal }>show total amount</button>
-      <TotalAmount names={ names } totalAmount={ totalAmount }></TotalAmount>
-      
-      <p>Give a name for which you want see occurrence</p>
-      <form></form>
+      <NamesList names={ names }
+                 sortType={ sortType }
+                 showAll={ showAll }
+                 searchPhrase={ searchPhrase }
+                 handleShowByAmount={ handleShowByAmount }
+                 handleShowInABC={ handleShowInABC }></NamesList>
+      <TotalAmount names={ names }
+                   totalAmount={ totalAmount }
+                   handleShowTotal={ handleShowTotal }></TotalAmount>
+      <Filter searchPhrase={ searchPhrase } handleSearch={ handleSearch }></Filter>
     </div>
   )
 }
