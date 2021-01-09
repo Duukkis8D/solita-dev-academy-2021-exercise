@@ -11,7 +11,7 @@ const NamesList = ({
     const persons =
         showAll ?
             names : 
-            names.filter( person => person.name.toUpperCase() === searchPhrase.toUpperCase() )
+            names.filter( person => person.name.toUpperCase().includes( searchPhrase.toUpperCase() ))
 
     const renderNames = () => {
         if ( sortType === 'amount' ) {
@@ -57,7 +57,6 @@ const NamesList = ({
                 </tbody>
             </table>
         </div>
-        
     )
 }
 
