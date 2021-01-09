@@ -4,9 +4,7 @@ const NamesList = ({
                     names,
                     sortType,
                     showAll,
-                    searchPhrase,
-                    handleShowByAmount,
-                    handleShowInABC
+                    searchPhrase
                     }) => {
     const persons =
         showAll ?
@@ -19,8 +17,7 @@ const NamesList = ({
             return persons.map( name => <tr key={ name.name }>
                                             <td key={ name.name }>{ name.name }</td>
                                             <td key={ name.amount }>{ name.amount }</td>
-                                        </tr>
-            )
+                                        </tr> )
         }
 
         if ( sortType === 'alphabet' ) {
@@ -32,19 +29,14 @@ const NamesList = ({
             return persons.map( name => <tr key={ name.name }>
                                             <td key={ name.name }>{ name.name }</td>
                                             <td key={ name.amount }>{ name.amount }</td>
-                                        </tr>
-            )
+                                        </tr> )
         }
 
         else return null
     }
 
-    // Change sort names buttons to one dropdown menu
     return (
-        <div>
-            <p>Sort names</p>
-            <button onClick={ handleShowByAmount }>show by amount</button>
-            <button onClick={ handleShowInABC }>show in alphabetical order</button>
+        <div id='namesListContainer'>
             <table>
                 <thead>
                     <tr>

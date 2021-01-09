@@ -13,7 +13,7 @@ const TotalAmount = ({ names, totalAmount, handleShowTotal }) => {
     }
 
     return (
-        <div>
+        <div id='totalAmountContainer'>
             <p>Total amount of all the names</p>
             <button onClick={ handleShowTotal }>show/hide total amount</button>
             <p>{ renderTotalAmount() }</p>

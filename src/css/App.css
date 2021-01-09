@@ -1,0 +1,19 @@
+#appContainer {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.8fr 1fr 4fr;
+}
+
+h1 {
+    font-size: 30px;
+    padding: 5px;
+    margin: 20px 10px 10px 10px;
+    grid-column-start: 1;
+    grid-column-end: span 3;
+}
+
+p, table, input, button {
+    font-size: 18px;
+}

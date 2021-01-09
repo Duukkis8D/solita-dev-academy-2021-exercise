@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import NamesList from './components/NamesList'
+import SortNames from './components/SortNames'
 import TotalAmount from './components/TotalAmount'
 import Filter from './components/Filter'
+import NamesList from './components/NamesList'
 import nameService from './services/nameService'
+import './css/App.css'
+import './css/SortNames.css'
+import './css/TotalAmount.css'
+import './css/Filter.css'
+import './css/NamesList.css'
 
 const App = () => {
   const [ names, setNames ] = useState([])
@@ -41,18 +47,20 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div id='appContainer'>
       <h1>Most common names in Solita</h1>
+      <SortNames handleShowByAmount={ handleShowByAmount }
+                 handleShowInABC={ handleShowInABC }></SortNames>
+      <TotalAmount names={ names }
+                   totalAmount={ totalAmount }
+                   handleShowTotal={ handleShowTotal }></TotalAmount>
+      <Filter searchPhrase={ searchPhrase } handleSearch={ handleSearch }></Filter>
       <NamesList names={ names }
                  sortType={ sortType }
                  showAll={ showAll }
                  searchPhrase={ searchPhrase }
                  handleShowByAmount={ handleShowByAmount }
                  handleShowInABC={ handleShowInABC }></NamesList>
-      <TotalAmount names={ names }
-                   totalAmount={ totalAmount }
-                   handleShowTotal={ handleShowTotal }></TotalAmount>
-      <Filter searchPhrase={ searchPhrase } handleSearch={ handleSearch }></Filter>
     </div>
   )
 }
