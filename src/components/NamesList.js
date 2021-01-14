@@ -35,20 +35,28 @@ const NamesList = ({
         else return null
     }
 
+    const renderNamesList = () => {
+        if ( persons.length > 0 ) {
+            return (
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        { renderNames() }
+                    </tbody>
+                </table>
+            )
+        }
+
+        else return <p>No names found! Try another name.</p>
+    }
+
     return (
-        <div id='namesListContainer'>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Amount</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    { renderNames() }
-                </tbody>
-            </table>
-        </div>
+        <div id='namesListContainer'>{ renderNamesList() }</div>
     )
 }
 

@@ -30,10 +30,8 @@ const App = () => {
   }
 
   const handleSearch = ( event ) => {
-    setSortType( 'alphabet' )
     setShowAll( false )
     setSearchPhrase( event.target.value )
-    console.log( event.target.value )
     if ( event.target.value === '' ) setShowAll( true )
   }
 

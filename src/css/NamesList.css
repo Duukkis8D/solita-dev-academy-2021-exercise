@@ -1,7 +1,24 @@
+/* Mobile First */
+
 #namesListContainer {
-    border: 2px solid black;
-    padding: 5px;
+    background-color: lightblue;
+    padding: 15px;
     margin: 10px;
-    grid-column-start: 1;
-    grid-column-end: span 3;
+    text-align: left;
+}
+
+th,
+td {
+    padding-right: 20px;
+}
+
+th {
+    padding-bottom: 10px;
+}
+
+@media only screen and ( min-width: 570px ) {
+    #namesListContainer {
+        grid-column-start: 1;
+        grid-column-end: span 3;
+    }
 }

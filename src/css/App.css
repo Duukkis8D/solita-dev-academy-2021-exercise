@@ -1,19 +1,45 @@
+/* Mobile First */
+
 #appContainer {
-    max-width: 900px;
+    max-width: 650px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.8fr 1fr 4fr 0.5fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto 4.2fr auto;
 }
 
 h1 {
-    font-size: 30px;
+    text-align: center;
+    font-size: 24px;
     padding: 5px;
-    margin: 20px 10px 10px 10px;
-    grid-column-start: 1;
-    grid-column-end: span 3;
+    margin: 40px 10px 10px 10px;
 }
 
-p, table, input, button, label {
+p,
+table,
+input,
+button,
+label,
+select,
+option {
     font-size: 18px;
+}
+
+@media only screen and ( min-width: 435px ) {
+    h1 {
+        font-size: 30px;
+    }
+}
+
+@media only screen and ( min-width: 570px ) {
+    #appContainer {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 0.5fr 4.2fr auto;
+    }
+
+    h1 {
+        font-size: 34px;
+        grid-column-start: 1;
+        grid-column-end: span 3;
+    }
 }

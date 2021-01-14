@@ -1,5 +1,17 @@
 #filterContainer {
-    border: 2px solid black;
     padding: 5px;
     margin: 10px;
+}
+
+#filterContainer p {
+    margin: 0 0 10px 0;
+}
+
+input {
+    -ms-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; 
+    box-sizing: content-box;
+    padding: 5px;
+    width: 260px;
 }

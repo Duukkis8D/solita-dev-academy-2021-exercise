@@ -10,7 +10,8 @@ const TotalAmount = ({ names }) => {
 
     return (
         <div id='totalAmountContainer'>
-            <p>Total amount of all the names: { renderTotalAmount() }</p>
+            <p>Total amount of all the names</p>
+            <p id='totalAmount'>{ renderTotalAmount() }</p>
         </div>
     )
 }

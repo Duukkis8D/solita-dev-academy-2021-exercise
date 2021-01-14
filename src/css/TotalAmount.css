@@ -1,7 +1,17 @@
+/* Mobile First */
+
 #totalAmountContainer {
-    border: 2px solid black;
     padding: 5px;
     margin: 10px;
-    grid-column-start: 1;
-    grid-column-end: span 3;
+}
+
+#totalAmount {
+    font-size: 22px;
+}
+
+@media only screen and ( min-width: 570px ) {
+    #totalAmountContainer {
+        grid-column-start: 1;
+        grid-column-end: span 3;
+    }
 }
