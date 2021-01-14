@@ -1,12 +1,13 @@
 import React from 'react'
 
-const SortNames = ({ handleShowByAmount, handleShowInABC }) => {
-    // Change sort names buttons to one dropdown menu
+const SortNames = ({ sortType, handleSortType }) => {
     return (
         <div id='sortNamesContainer'>
-            <p>Sort names</p>
-            <button onClick={ handleShowByAmount }>show by amount</button>
-            <button onClick={ handleShowInABC }>show in alphabetical order</button>
+            <label for='names'>Sort names</label>
+            <select name='names' id='selectSortType' onChange={ handleSortType } value={ sortType }>
+                <option value='byAmount'>by amount, most popular first</option>
+                <option value='inABC'>in alphabetical order</option>
+            </select>
         </div>
     )
 }
