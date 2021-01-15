@@ -1,5 +1,4 @@
 #sortNamesContainer {
-    padding: 5px;
     margin: 10px;
 }
 
@@ -7,12 +6,11 @@
     margin-top: 10px;
 }
 
-select,
-option {
-    -ms-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box; 
-    box-sizing: content-box;
+select {
+    box-sizing: border-box;
+    border: 2px solid lightblue;
+    border-radius: 5px;
     padding: 5px;
-    width: 260px;
+    width: 270px;
+    height: 35px;
 }

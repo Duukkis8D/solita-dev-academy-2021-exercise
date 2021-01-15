@@ -5,11 +5,15 @@
     margin: 10px;
 }
 
+#totalAmountContainer p {
+    margin-top: 0;
+}
+
 #totalAmount {
     font-size: 22px;
 }
 
-@media only screen and ( min-width: 570px ) {
+@media only screen and ( min-width: 620px ) {
     #totalAmountContainer {
         grid-column-start: 1;
         grid-column-end: span 3;

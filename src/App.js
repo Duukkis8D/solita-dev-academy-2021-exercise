@@ -11,7 +11,7 @@ import './css/Filter.css'
 import './css/NamesList.css'
 
 const App = () => {
-  const [ names, setNames ] = useState([])
+  const [ names, setNames ] = useState( [] )
   // sortType = 'amount' OR 'alphabet' (defaults to 'amount')
   const [ sortType, setSortType ] = useState( 'amount' )
   const [ searchPhrase, setSearchPhrase ] = useState( '' )

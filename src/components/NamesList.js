@@ -52,6 +52,10 @@ const NamesList = ({
             )
         }
 
+        if ( names.length === 0 ) {
+            return <p>Loading...</p>
+        }
+
         else return <p>No names found! Try another name.</p>
     }
 
